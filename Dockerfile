@@ -7,10 +7,10 @@ COPY . .
 
 # Stage 2: Run the application
 FROM openjdk:17-jdk
-WORKDIR /app
+WORKDIR .
 
 # Copy the built JAR file from the build stage
-COPY --from=build /app/build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2-0.0.1-SNAPSHOT.jar
+COPY --from=build /build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2-0.0.1-SNAPSHOT.jar
 
 # Set the JAVA_HOME environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
