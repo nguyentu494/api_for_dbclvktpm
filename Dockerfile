@@ -6,10 +6,10 @@ COPY . .
 # Run the Gradle build with no daemon to avoid memory issues
 
 # Stage 2: Run the application
-FROM openjdk:17-jdk
+FROM openjdk:17-jdk-slim
 
 # Copy the built JAR file from the build stage
-COPY build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2-0.0.1-SNAPSHOT.jar
+COPY --from=build /build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2.jar
 
 # Set the JAVA_HOME environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
@@ -19,4 +19,4 @@ ENV PATH="$JAVA_HOME/bin:$PATH"
 EXPOSE 8080
 
 # Run the Spring Boot app
-ENTRYPOINT ["java","-jar","/Zy2-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/Zy2.jar"]
