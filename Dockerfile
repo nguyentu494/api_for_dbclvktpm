@@ -9,7 +9,6 @@ COPY . .
 FROM openjdk:17-jdk
 WORKDIR /app
 
-DOCKER_BUILDKIT=0 docker build .
 # Copy the built JAR file from the build stage
 COPY --from=build /build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2-0.0.1-SNAPSHOT.jar
 
