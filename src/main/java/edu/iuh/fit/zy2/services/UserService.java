@@ -11,7 +11,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public boolean checkLogin(String username, String password) {
-        return userRepository.existsById(username) && userRepository.getById(username).getPassword().equals(password);
+        return userRepository.existsById(username) && userRepository.findByUsername(username).getPassword().equals(password);
     }
 
     public User createUser(User user) {

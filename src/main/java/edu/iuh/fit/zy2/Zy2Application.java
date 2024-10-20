@@ -5,7 +5,6 @@ import edu.iuh.fit.zy2.entities.User;
 import edu.iuh.fit.zy2.repositories.UserRepository;
 import edu.iuh.fit.zy2.services.PostService;
 import edu.iuh.fit.zy2.services.UserService;
-import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
