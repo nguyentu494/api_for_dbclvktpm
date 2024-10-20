@@ -4,7 +4,7 @@ WORKDIR /app
 COPY --chown=gradle:gradle . .
 
 # Run the Gradle build with no daemon to avoid memory issues
-RUN gradle build clean
+RUN gradle build
 
 # Stage 2: Run the application
 FROM openjdk:17-jdk-alpine
