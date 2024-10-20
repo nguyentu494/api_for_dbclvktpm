@@ -1,13 +1,12 @@
 # Stage 1: Build the application
 FROM gradle:8.7.0-jdk17 AS build
-WORKDIR /app
+WORKDIR .
 COPY . .
 
 # Run the Gradle build with no daemon to avoid memory issues
 
 # Stage 2: Run the application
 FROM openjdk:17-jdk
-WORKDIR .
 
 # Copy the built JAR file from the build stage
 COPY --from=build /build/libs/Zy2-0.0.1-SNAPSHOT.jar Zy2-0.0.1-SNAPSHOT.jar
